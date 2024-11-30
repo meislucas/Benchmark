@@ -2,18 +2,14 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Read the benchmark results from the CSV file
 df = pd.read_csv('../benchmark_results.csv')
 
-# Define the CSV files and metrics to plot
 csv_files = df['csv_file'].unique()
 metrics = ['read_time', 'write_time', 'agg_time', 'filter_time', 'join_time']
 
-# Create a figure with subplots
 fig, axes = plt.subplots(nrows=2, ncols=2, figsize=(15, 15))
 axes = axes.flatten()
 
-# Create bar plots for each CSV file
 for i, csv_file in enumerate(csv_files):
     ax = axes[i]
     subset = df[df['csv_file'] == csv_file]
