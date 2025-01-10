@@ -2,6 +2,7 @@ import csv
 import os
 from faker import Faker
 
+Faker.seed(85)
 fake = Faker()
 
 sizes = [100, 10000, 1000000, 2000000]
